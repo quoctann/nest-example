@@ -8,9 +8,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import { NotesModule } from './notes/notes.module';
+import { CatsModule } from './cats/cats.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { DogsModule } from './dogs/dogs.module';
 
 @Module({
-  imports: [NotesModule],
+  imports: [NotesModule, CatsModule, AuthModule, UsersModule, DogsModule],
   controllers: [AppController],
   providers: [AppService],
 })

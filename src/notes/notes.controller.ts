@@ -1,19 +1,22 @@
 import {
-  Controller,
-  Get,
-  Query,
-  Post,
   Body,
-  Put,
-  Param,
+  Controller,
   Delete,
+  Get,
   HttpException,
   HttpStatus,
+  Param,
+  Post,
+  Put,
+  Query,
+  UseFilters,
 } from '@nestjs/common';
+import { ForbiddenException } from 'src/exception/forbidden.exception';
+import { HttpExceptionFilter } from 'src/exception/http-exception.filter';
 import { CreateNoteDto } from './dto/create-note.dto';
-import { NotesService } from './notes.service';
 import { QueryNotesDTO } from './dto/query-notes.dto';
 import { UpdateNoteDTO } from './dto/update-note.dto';
+import { NotesService } from './notes.service';
 
 /**
  * This example how to use controller
@@ -23,7 +26,7 @@ export class NotesController {
   constructor(private notesService: NotesService) {}
 
   // Example exception handling
-  @Get('ex')
+  @Get('example')
   async getSampleList() {
     try {
       const data = await this.notesService.getSampleList();
@@ -35,9 +38,16 @@ export class NotesController {
           error: 'this is custom message',
         },
         HttpStatus.FORBIDDEN,
-        { cause: error },
+        { cause: error }, // can be custom cause here
       );
     }
+  }
+
+  // Use exception handling filter
+  @Get('example2')
+  @UseFilters(new HttpExceptionFilter())
+  async getSampleList2() {
+    throw new ForbiddenException();
   }
 
   @Post()

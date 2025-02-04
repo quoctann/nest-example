@@ -1,0 +1,21 @@
+{
+  // ref: https://dev.to/gentax/nestjs-right-settings-for-debugging-kl0
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug NestJS Application",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "start:debug", "--", "--inspect-brk"
+      ],
+      "autoAttachChildProcesses": true,
+      "restart": true,
+      "sourceMaps": true,
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+    }
+  ]
+}
