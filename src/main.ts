@@ -1,7 +1,7 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { AppModule } from './app.module';
-import { AllExceptionFilter } from './exception/all-exceptions.filter';
+import { AppModule } from './modules/app/app.module';
+import { AllExceptionFilter } from './exceptions/all-exceptions.filter';
 import { RolesGuard } from './guards/roles.guard';
 import { ValidationPipe } from './pipes/validation.pipe';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';

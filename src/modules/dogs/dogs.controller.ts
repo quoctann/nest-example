@@ -1,7 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { DogsService } from './dogs.service';
 import { CreateDogDto } from './dto/create-dog.dto';
 import { UpdateDogDto } from './dto/update-dog.dto';
+import { Public } from 'src/decorators/public.decorator';
 
 @Controller('dogs')
 export class DogsController {
@@ -12,6 +21,7 @@ export class DogsController {
     return this.dogsService.create(createDogDto);
   }
 
+  @Public()
   @Get()
   findAll() {
     return this.dogsService.findAll();

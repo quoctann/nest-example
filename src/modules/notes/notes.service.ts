@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { ForbiddenException } from 'src/exception/forbidden.exception';
+import { ForbiddenException } from 'src/exceptions/forbidden.exception';
 import { CreateNoteDto } from './dto/create-note.dto';
 
 @Injectable()

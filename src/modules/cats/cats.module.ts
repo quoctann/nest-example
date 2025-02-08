@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { CatsService } from './cats.service';
+import { DatabaseConfigService } from 'src/config/database.config';
 import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
 
 // This module use as example of Pipe & Guards
 @Module({
   controllers: [CatsController],
-  providers: [CatsService],
+  providers: [CatsService, DatabaseConfigService],
 })
 export class CatsModule {}

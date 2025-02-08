@@ -11,8 +11,8 @@ import {
   Query,
   UseFilters,
 } from '@nestjs/common';
-import { ForbiddenException } from 'src/exception/forbidden.exception';
-import { HttpExceptionFilter } from 'src/exception/http-exception.filter';
+import { ForbiddenException } from 'src/exceptions/forbidden.exception';
+import { HttpExceptionFilter } from 'src/exceptions/http-exception.filter';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { QueryNotesDTO } from './dto/query-notes.dto';
 import { UpdateNoteDTO } from './dto/update-note.dto';

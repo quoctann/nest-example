@@ -4,7 +4,7 @@ import {
   Injectable,
   PipeTransform,
 } from '@nestjs/common';
-import { Cat } from 'src/cats/entities/cat.entity';
+import { Cat } from 'src/modules/cats/entities/cat.entity';
 
 @Injectable()
 export class CatByIdPipe implements PipeTransform<string, Cat> {

@@ -24,6 +24,6 @@ export class LoggingInterceptor implements NestInterceptor {
     // rxjs map()
     return next
       .handle()
-      .pipe(tap(() => console.log(`After... ${Date.now() - now}ms`)));
+      .pipe(tap(() => console.log(`Intercept after... ${Date.now() - now}ms`)));
   }
 }
